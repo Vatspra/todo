@@ -4,7 +4,7 @@ import todoController from '../controllers/todoController';
 const router = Router();
 
 router.get('/test', (req, res) => {
-  res.send('testing github actions');
+  res.send('testing again');
 });
 
 // GET /api/todos/stats - Must be before /:id route to avoid conflicts
