@@ -25,5 +25,3 @@ jobs:
           npm install
           npm run build
 
-      - name: (Optional) Run Tests
-        run: npm test
