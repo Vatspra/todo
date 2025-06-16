@@ -16,8 +16,8 @@ const allowedOrigins = [
   'http://localhost:3002',
   'http://localhost:3003',
   'http://localhost:3004',
-  'https://todo-frontend-theta-self.vercel.app/',
-  'https://todo-frontend-vatspras-projects.vercel.app/',
+  'https://todo-frontend-theta-self.vercel.app',
+  'https://todo-frontend-vatspras-projects.vercel.app',
   'http://localhost:5173',
 ];
 
