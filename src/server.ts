@@ -10,6 +10,17 @@ import { connectDatabase } from './config/database';
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:3001',
+  'http://localhost:3002',
+  'http://localhost:3003',
+  'http://localhost:3004',
+  'https://todo-frontend-theta-self.vercel.app/',
+  'https://todo-frontend-vatspras-projects.vercel.app/',
+  'http://localhost:5173',
+];
+
 // Connect to MongoDB before setting up middleware
 const startServer = async () => {
   try {
@@ -21,7 +32,13 @@ const startServer = async () => {
 
     // CORS configuration
     app.use(cors({
-      origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+      origin: (origin, callback) => {
+        if (allowedOrigins.includes(origin || '')) {
+          callback(null, true);
+        } else {
+          callback(new Error('Not allowed by CORS'));
+        }
+      },
       credentials: true
     }));
 
